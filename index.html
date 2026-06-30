@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Crystalfall Chronicles</title>
+    <meta
+      name="description"
+      content="A self-contained classic fantasy browser RPG for GitHub Pages."
+    >
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <main class="shell">
+      <section class="hero-panel" aria-labelledby="game-title">
+        <div>
+          <p class="eyebrow">A classic turn-based browser RPG</p>
+          <h1 id="game-title">Crystalfall Chronicles</h1>
+          <p class="intro">
+            Gather the three shard crystals, rally your party, and seal the
+            Shadow Spire before the realm of Auralis fades into night.
+          </p>
+        </div>
+        <div class="save-controls" aria-label="Game save controls">
+          <button id="new-game-button" type="button">New Game</button>
+          <button id="save-button" type="button">Save</button>
+          <button id="load-button" type="button">Load</button>
+        </div>
+      </section>
+
+      <section class="game-grid">
+        <div class="canvas-card">
+          <canvas
+            id="game-canvas"
+            width="768"
+            height="512"
+            aria-label="Pixel art overworld and battle view"
+          ></canvas>
+          <div class="mobile-controls" aria-label="Movement controls">
+            <span></span>
+            <button type="button" data-move="up" aria-label="Move up">Up</button>
+            <span></span>
+            <button type="button" data-move="left" aria-label="Move left">Left</button>
+            <button type="button" data-move="down" aria-label="Move down">Down</button>
+            <button type="button" data-move="right" aria-label="Move right">Right</button>
+          </div>
+        </div>
+
+        <aside class="side-panel">
+          <section class="card">
+            <h2>Party</h2>
+            <div id="party-panel" class="party-list"></div>
+          </section>
+
+          <section class="card">
+            <h2>Quest</h2>
+            <div id="quest-panel" class="quest-copy"></div>
+          </section>
+
+          <section class="card">
+            <h2>Commands</h2>
+            <div id="command-panel" class="command-grid"></div>
+          </section>
+        </aside>
+      </section>
+
+      <section class="log-card" aria-live="polite">
+        <h2>Adventure Log</h2>
+        <ol id="log-panel" class="log-list"></ol>
+      </section>
+
+      <section class="help-card">
+        <h2>How to play</h2>
+        <ul>
+          <li>Move with <kbd>WASD</kbd>, arrow keys, or the on-screen buttons.</li>
+          <li>Explore forests and ruins to earn experience and gold.</li>
+          <li>Visit towns to rest and buy potions or ethers.</li>
+          <li>Defeat shrine guardians to claim crystals, then challenge the Shadow Spire.</li>
+        </ul>
+      </section>
+    </main>
+
+    <script src="game.js"></script>
+  </body>
+</html>
