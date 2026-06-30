@@ -1013,7 +1013,7 @@ function renderQuest() {
   const crystals = ["verdant", "ember", "sky"]
     .map((key) => {
       const owned = state.crystals.includes(key);
-      return `<span class="crystal">${owned ? "◆" : "◇"} ${CRYSTALS[key]}</span>`;
+      return `<span class="crystal">${owned ? "[x]" : "[ ]"} ${CRYSTALS[key]}</span>`;
     })
     .join("");
 
@@ -1033,7 +1033,7 @@ function renderQuest() {
 
   questPanel.innerHTML = `
     <div class="quest-row"><strong>Gold</strong><span>${state.gold}</span></div>
-    <div class="quest-row"><strong>Items</strong><span>${state.potions} Potions · ${state.ethers} Ethers</span></div>
+    <div class="quest-row"><strong>Items</strong><span>${state.potions} Potions / ${state.ethers} Ethers</span></div>
     <div class="quest-row"><strong>Area</strong><span>${TILE_NAMES[currentTile()]}</span></div>
     <div>${crystals}</div>
     <p>${objective}</p>
